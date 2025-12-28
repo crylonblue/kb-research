@@ -46,7 +46,7 @@ export default function Home() {
             setPlayers(results.data)
             setLoading(false)
           },
-          error: (error) => {
+          error: (error: Error) => {
             console.error('Error parsing CSV:', error)
             setLoading(false)
           }

@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom slider styles */
+input[type="range"].slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  outline: none;
+}
+
+input[type="range"].slider-thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  cursor: pointer;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4), 0 0 0 2px rgba(37, 99, 235, 0.1);
+  transition: all 0.2s ease;
+  margin-top: -7px; /* Center the thumb vertically (track height 10px / 2 - thumb height 24px / 2 = -7px) */
+}
+
+input[type="range"].slider-thumb::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.5), 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+input[type="range"].slider-thumb::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+}
+
+input[type="range"].slider-thumb::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  cursor: pointer;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4), 0 0 0 2px rgba(37, 99, 235, 0.1);
+  transition: all 0.2s ease;
+  /* Firefox centers thumb automatically, but we ensure it's aligned */
+}
+
+input[type="range"].slider-thumb::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.5), 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+input[type="range"].slider-thumb::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to right, #3b82f6 0%, #60a5fa 100%);
+  border-radius: 5px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+input[type="range"].slider-thumb::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to right, #3b82f6 0%, #60a5fa 100%);
+  border-radius: 5px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+

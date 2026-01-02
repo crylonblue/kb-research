@@ -68,13 +68,16 @@ export default function Managers() {
     const num = typeof value === 'string' ? parseFloat(value) : value
     if (isNaN(num)) return 'N/A'
     
-    if (num >= 1000000) {
-      return `€${(num / 1000000).toFixed(2)}M`
+    const absNum = Math.abs(num)
+    const sign = num < 0 ? '-' : ''
+    
+    if (absNum >= 1000000) {
+      return `${sign}€${(absNum / 1000000).toFixed(2)}M`
     }
-    if (num >= 1000) {
-      return `€${(num / 1000).toFixed(1)}K`
+    if (absNum >= 1000) {
+      return `${sign}€${(absNum / 1000).toFixed(1)}K`
     }
-    return `€${num.toFixed(0)}`
+    return `${sign}€${absNum.toFixed(0)}`
   }
 
   const formatNumber = (value: string | number): string => {

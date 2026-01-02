@@ -33,6 +33,16 @@ export default function Navigation() {
               >
                 Calculator
               </Link>
+              <Link
+                href="/managers"
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  pathname === '/managers'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                Managers
+              </Link>
             </div>
           </div>
         </div>

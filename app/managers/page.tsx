@@ -45,7 +45,7 @@ export default function Managers() {
                 setLoading(false)
                 setError(null)
               },
-              error: (error) => {
+              error: (error: any) => {
                 console.error('CSV parsing error:', error)
                 setError('Error parsing CSV file')
                 setLoading(false)
